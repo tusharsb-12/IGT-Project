@@ -5,10 +5,12 @@ this.map = L.map("map", {
   trackResize: true,
 });
 
-fetch("http://localhost:8000/boundary")
+fetch(
+  "https://opendata.arcgis.com/datasets/ba24c0b6ade04b43aa1ca8dee504ee7e_0.geojson"
+)
   .then((res) => res.json())
   .then((data) => {
-    // console.log(data);
+    console.log(data);
     L.geoJson(data).addTo(map);
   });
 
