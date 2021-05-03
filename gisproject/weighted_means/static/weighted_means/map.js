@@ -10,7 +10,7 @@ fetch(
 )
   .then((res) => res.json())
   .then((data) => {
-    console.log(data);
+    // console.log(data);
     L.geoJson(data).addTo(map);
   });
 
@@ -23,5 +23,19 @@ const tiles = L.tileLayer(
 );
 
 tiles.addTo(this.map);
+
+fetch("http://localhost:8000/2011")
+  .then((res) => res.json())
+  .then((data) => {
+    // console.log(data);
+    L.geoJson(data).addTo(map);
+  });
+
+// fetch("http://localhost:8000/2001")
+//   .then((res) => res.json())
+//   .then((data) => {
+//     console.log(data);
+//     L.geoJson(data).addTo(map);
+//   });
 
 // https://leaflet-extras.github.io/leaflet-providers/preview/
