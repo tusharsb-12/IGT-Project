@@ -19,3 +19,25 @@ class IndianStates(models.Model):
 
     def __str__(self):
         return self.name_1
+
+
+class Centroids01(models.Model):
+    state = models.CharField(max_length=100)
+    location = models.PointField()
+
+    class Meta:
+        verbose_name_plural = 'Centroids 2001'
+
+    def __str__(self):
+        return self.state
+
+
+class Centroids11(models.Model):
+    state = models.CharField(max_length=100)
+    location = models.PointField()
+
+    class Meta:
+        verbose_name_plural = 'Centroids 2011'
+
+    def __str__(self):
+        return self.state
