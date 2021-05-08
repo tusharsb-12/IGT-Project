@@ -1,9 +1,92 @@
-html,
-body {
-  height: 100%;
+* {
+  padding: 0;
   margin: 0;
 }
+
 #map {
-  width: 100%;
   height: 100%;
+}
+
+.main-body {
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.footer {
+  width: 100%;
+}
+
+.container {
+  width: auto;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.project-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.social-logo {
+  width: 24px;
+}
+
+.grid-container {
+  position: relative;
+  left: 0%;
+  display: grid;
+  grid-template-columns: auto auto;
+  width: fit-content;
+}
+
+.grid-item {
+  padding: 5px 15px;
+  text-align: center;
+}
+
+.map-div {
+  width: 75%;
+  background-color: aqua;
+  height: 100%;
+}
+
+.side-bar {
+  position: absolute;
+  height: 100%;
+  background-color: blue;
+  width: 25%;
+  right: 0;
+}
+
+.social-media-block {
+  position: relative;
+  left: 25%;
+  width: fit-content;
+}
+
+.img-grp {
+  display: flex;
+  justify-content: space-around;
+}
+
+.link-div {
+  position: relative;
+  left: 50%;
+  width: fit-content;
 }
