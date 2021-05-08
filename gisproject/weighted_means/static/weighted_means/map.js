@@ -1,5 +1,5 @@
 this.map = L.map("map", {
-  center: [21.0, 78.0], // india coordinates
+  center: [22.5, 78.0], // india coordinates
   zoom: 5,
   zoomControl: true,
   trackResize: true,
@@ -24,18 +24,16 @@ const tiles = L.tileLayer(
 
 tiles.addTo(this.map);
 
-fetch("http://localhost:8000/2011")
+fetch("http://localhost:8000/2001")
   .then((res) => res.json())
   .then((data) => {
-    // console.log(data);
     L.geoJson(data).addTo(map);
   });
 
-// fetch("http://localhost:8000/2001")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     console.log(data);
-//     L.geoJson(data).addTo(map);
-//   });
+fetch("http://localhost:8000/2011")
+  .then((res) => res.json())
+  .then((data) => {
+    L.geoJson(data).addTo(map);
+  });
 
 // https://leaflet-extras.github.io/leaflet-providers/preview/

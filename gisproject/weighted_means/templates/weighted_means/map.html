@@ -1,23 +1,4 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Markers Map</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'weighted_means/map.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script src="{% static 'weighted_means/map.js' %}"></script>
-  </body>
-</html>
+{% extends 'weighted_means/base.html' %} {% load static %} {% block content %}
+<div id="map"></div>
+<script src="{% static 'weighted_means/map.js' %}"></script>
+{% endblock content %}
