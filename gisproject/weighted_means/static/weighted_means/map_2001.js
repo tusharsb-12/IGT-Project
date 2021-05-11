@@ -32,8 +32,8 @@ fetch("http://localhost:8000/2001")
         let output = `<strong>State</strong>: ${layer.feature.properties.state}<br /><strong>Coordinates</strong>: ${layer.feature.geometry.coordinates}`;
         return output;
       })
-      .openPopup();
-    addTo(map);
+      .openPopup()
+      .addTo(map);
   });
 
 // https://leaflet-extras.github.io/leaflet-providers/preview/
