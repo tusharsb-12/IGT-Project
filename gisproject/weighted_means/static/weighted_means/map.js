@@ -27,13 +27,25 @@ tiles.addTo(this.map);
 fetch("http://localhost:8000/2001")
   .then((res) => res.json())
   .then((data) => {
-    L.geoJson(data).addTo(map);
+    L.geoJson(data)
+      .bindPopup(function (layer) {
+        let output2001 = `<strong>State</strong>: ${layer.feature.properties.state}<br /><strong>Coordinates</strong>: ${layer.feature.geometry.coordinates}<br /><strong>For year</strong>: 2001`;
+        return output2001;
+      })
+      .openPopup()
+      .addTo(map);
   });
 
 fetch("http://localhost:8000/2011")
   .then((res) => res.json())
   .then((data) => {
-    L.geoJson(data).addTo(map);
+    L.geoJson(data)
+      .bindPopup(function (layer) {
+        let output2011 = `<strong>State</strong>: ${layer.feature.properties.state}<br /><strong>Coordinates</strong>: ${layer.feature.geometry.coordinates}<br /><strong>For year</strong>: 2011`;
+        return output2011;
+      })
+      .openPopup()
+      .addTo(map);
   });
 
 // https://leaflet-extras.github.io/leaflet-providers/preview/

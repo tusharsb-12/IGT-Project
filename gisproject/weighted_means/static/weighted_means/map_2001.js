@@ -27,7 +27,13 @@ tiles.addTo(this.map);
 fetch("http://localhost:8000/2001")
   .then((res) => res.json())
   .then((data) => {
-    L.geoJson(data).addTo(map);
+    L.geoJson(data)
+      .bindPopup(function (layer) {
+        let output = `<strong>State</strong>: ${layer.feature.properties.state}<br /><strong>Coordinates</strong>: ${layer.feature.geometry.coordinates}`;
+        return output;
+      })
+      .openPopup();
+    addTo(map);
   });
 
 // https://leaflet-extras.github.io/leaflet-providers/preview/
