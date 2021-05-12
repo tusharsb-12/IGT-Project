@@ -27,7 +27,17 @@ tiles.addTo(this.map);
 fetch("http://localhost:8000/2001")
   .then((res) => res.json())
   .then((data) => {
-    L.geoJson(data)
+    L.geoJson(data, {
+      pointToLayer: (feature, latlng) => {
+        let redIcon = L.icon({
+          iconSize: [27, 27],
+          iconAnchor: [13, 27],
+          popupAnchor: [1, -24],
+          iconUrl: "https://img.icons8.com/metro/26/fa314a/circled-dot.png",
+        });
+        return L.marker(latlng, { icon: redIcon });
+      },
+    })
       .bindPopup(function (layer) {
         let output = `<strong>State</strong>: ${layer.feature.properties.state}<br /><strong>Coordinates</strong>: ${layer.feature.geometry.coordinates}`;
         return output;
