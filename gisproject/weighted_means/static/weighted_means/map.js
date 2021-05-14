@@ -68,4 +68,19 @@ fetch("http://localhost:8000/2011")
       .addTo(map);
   });
 
+// Legend
+var legend = L.control({ position: "topright" });
+
+legend.onAdd = function (map) {
+  var div = L.DomUtil.create("div", "legend");
+  div.innerHTML += "<h4><strong>Legend</strong></h4>";
+  div.innerHTML +=
+    '<i style="background: rgb(255, 0, 0)"></i><span>2001</span><br>';
+  div.innerHTML +=
+    '<i style="background: rgb(0, 255, 0)"></i><span>2011</span><br>';
+  return div;
+};
+
+legend.addTo(map);
+
 // https://leaflet-extras.github.io/leaflet-providers/preview/
